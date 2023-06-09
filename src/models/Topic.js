@@ -15,6 +15,8 @@ const topicSchema = new mongoose.Schema({
             }
         }
     }
+},{
+    timestamps: true
 })
 
 topicSchema.pre('save', async function(next){

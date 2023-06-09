@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 const axios = require('axios');
 
 const topicRouter = require('./src/routers/topic')
+const commentRouter = require('./src/routers/comment')
 
 const uri = `mongodb+srv://${process.env.DATABASE_CONNECTION}/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`;
 
@@ -31,6 +32,7 @@ app.use(cors())
  * Routers
  */
 app.use(topicRouter)
+app.use(commentRouter)
 
 app.listen(process.env.PORT, ()=>{
     console.log('App is running on port', process.env.PORT)

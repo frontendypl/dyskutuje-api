@@ -22,8 +22,8 @@ router.post('/topics',async (req, res)=>{
     const topic = new Topic({url})
 
     try {
-        const newtopic = await topic.save()
-        res.status(201).send(newtopic)
+        const newTopic = await topic.save()
+        res.status(201).send(newTopic)
     }catch (e) {
         console.log(e)
         res.status(400).send(e)
