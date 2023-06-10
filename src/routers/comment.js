@@ -10,12 +10,14 @@ router.post('/comments',async (req, res)=>{
 
     const text = req.body.text
     const topic = req.body.topic
+    const parent = req.body.parent
 
     const errors = {}
 
     const comment = new Comment({
         topic,
-        text
+        text,
+        parent
     })
 
     try {
