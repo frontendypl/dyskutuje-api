@@ -11,6 +11,7 @@ const router = new express.Router()
 router.post('/topics',async (req, res)=>{
 
     const url = req.body.url
+    console.log(url)
 
     const errors = {}
 
@@ -26,8 +27,15 @@ router.post('/topics',async (req, res)=>{
         const newTopic = await topic.save()
         res.status(201).send(newTopic)
     }catch (e) {
-        console.log(e)
-        res.status(400).send(e)
+
+        // errors.test = {
+        //     message: 'Testowy błąd'
+        // }
+
+        res.status(400).send({
+            ...errors,
+            ...e.errors
+        })
     }
 
 })
@@ -40,7 +48,7 @@ router.get('/topics', async (req, res)=>{
 router.get('/topics/:id', async (req, res)=>{
 
     const data = {
-        topic: '',
+        topic: {},
         comments: [],
     }
 

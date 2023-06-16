@@ -13,10 +13,20 @@ const commentSchema = new mongoose.Schema({
         required: [true, 'To pole nie może być puste'],
         maxLength: [250, 'Maksymalnie 250 znaków'],
     },
+    nickName: {
+        type: mongoose.Schema.Types.String,
+        trim: true,
+        required: [true, 'Podaj swój nick'],
+        maxLength: [20, 'Maksymalnie 20 znaków'],
+    },
+    /*
+    empty or comment's _id if is sub-comment
+     */
     parent: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId || null,
         ref: 'Comment'
     },
+
 },{
     timestamps: true
 })

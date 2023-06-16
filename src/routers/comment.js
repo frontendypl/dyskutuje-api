@@ -9,6 +9,7 @@ const router = new express.Router()
 router.post('/comments',async (req, res)=>{
 
     const text = req.body.text
+    const nickName = req.body.nickName
     const topic = req.body.topic
     const parent = req.body.parent
 
@@ -17,6 +18,7 @@ router.post('/comments',async (req, res)=>{
     const comment = new Comment({
         topic,
         text,
+        nickName,
         parent
     })
 
