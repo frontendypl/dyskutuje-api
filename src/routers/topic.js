@@ -41,7 +41,7 @@ router.post('/topics',async (req, res)=>{
 })
 
 router.get('/topics', async (req, res)=>{
-    const topics = await Topic.find()
+    const topics = await Topic.find().sort({'createdAt':-1})
     res.status(200).send(topics)
 })
 
@@ -54,7 +54,7 @@ router.get('/topics/:id', async (req, res)=>{
 
     try{
         data.topic  = await Topic.findById(req.params.id)
-        data.comments = await Comment.find({topic: data.topic})
+        data.comments = await Comment.find({topic: data.topic}).sort({'createdAt':-1})
         res.status(200).send(data)
     } catch (e) {
         res.status(400).send(e)
