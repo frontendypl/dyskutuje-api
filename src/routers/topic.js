@@ -3,8 +3,10 @@ const express = require('express')
 
 const Topic = require('../models/Topic')
 const Comment = require('../models/Comment')
+const PrintScreen = require('../models/PrintScreen')
 
 const topicProtocol = require('../utils/index').topicProtocol
+const createPrintScreen = require('../utils/index').createPrintScreen
 
 const router = new express.Router()
 
@@ -24,7 +26,8 @@ router.post('/topics',async (req, res)=>{
     const topic = new Topic({url})
 
     try {
-        const newTopic = await topic.save()
+        const newTopic = await topic.save()        
+        createPrintScreen(newTopic,newTopic.url)
         res.status(201).send(newTopic)
     }catch (e) {
 
