@@ -9,7 +9,7 @@ const printScreenSchema = new mongoose.Schema({
     title: {
         type: mongoose.Schema.Types.String,
         trim: true,
-        required: true
+        // required: true
     },
     topic: {
         type: mongoose.Schema.Types.ObjectId,

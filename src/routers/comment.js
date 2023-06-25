@@ -32,4 +32,9 @@ router.post('/comments',async (req, res)=>{
 
 })
 
+router.delete('/comments/all', async (req, res)=>{
+    await Comment.deleteMany()
+    res.status(200).send('deleted all')
+  })
+
 module.exports = router;

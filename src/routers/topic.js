@@ -48,6 +48,11 @@ router.get('/topics', async (req, res)=>{
     res.status(200).send(topics)
 })
 
+router.delete('/topics/all', async (req, res)=>{
+    await Topic.deleteMany()
+    res.status(200).send('deleted all')
+})
+
 router.get('/topics/:id', async (req, res)=>{
 
     const data = {

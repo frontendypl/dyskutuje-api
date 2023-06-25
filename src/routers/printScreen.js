@@ -1,19 +1,18 @@
-const puppeteer = require("puppeteer");
+require('dotenv').config();
+const express = require('express')
 
-puppeteer
-  .launch({
-    headless: 'new',
-    defaultViewport: {
-      width: 1280,
-      height: 1000,
-    },
-  })
-  .then(async (browser) => {
-    const page = await browser.newPage();
-    await page.goto("https://allegrolokalnie.pl/oferta/lenovo-legion-5pro-i3e");
-    const image = await page.screenshot({ encoding: 'base64' });
-    console.log(image)
-    console.log(await page.title())
-    await browser.close();
-  });
+const PrintScreen = require('../models/PrintScreen')
 
+const router = new express.Router()
+
+router.get('/printScreens', async (req, res)=>{
+  const printScreens = await PrintScreen.find().sort({'createdAt':-1})
+  res.status(200).send(printScreens)
+})
+
+router.delete('/printScreens/all', async (req, res)=>{
+  await PrintScreen.deleteMany()
+  res.status(200).send('deleted all')
+})
+
+module.exports = router;
