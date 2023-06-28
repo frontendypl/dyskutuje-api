@@ -45,6 +45,7 @@ router.post('/topics',async (req, res)=>{
 
 router.get('/topics', async (req, res)=>{
     const topics = await Topic.find().sort({'createdAt':-1})
+    
     res.status(200).send(topics)
 })
 

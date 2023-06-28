@@ -17,7 +17,7 @@ const commentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.String,
         trim: true,
         required: [true, 'Podaj swój nick'],
-        maxLength: [20, 'Maksymalnie 20 znaków'],
+        maxLength: [20, 'Maksymalnie 20 znaków']
     },
     /*
     empty or comment's _id if is sub-comment

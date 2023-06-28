@@ -3,8 +3,12 @@ const express = require('express')
 
 const Comment = require('../models/Comment')
 
-
 const router = new express.Router()
+
+router.get('/comments', async (req, res)=>{
+    const comments = await Comment.find().sort({'createdAt':-1})
+    res.status(200).send(comments)
+})
 
 router.post('/comments',async (req, res)=>{
 
