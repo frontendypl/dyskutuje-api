@@ -10,9 +10,9 @@ router.get('/printScreens', async (req, res)=>{
   res.status(200).send(printScreens)
 })
 
-router.delete('/printScreens/all', async (req, res)=>{
-  await PrintScreen.deleteMany()
-  res.status(200).send('deleted all')
-})
+// router.delete('/printScreens/all', async (req, res)=>{
+//   await PrintScreen.deleteMany()
+//   res.status(200).send('deleted all')
+// })
 
 module.exports = router;
