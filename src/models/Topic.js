@@ -7,7 +7,7 @@ const topicSchema = new mongoose.Schema({
     url: {
         type: mongoose.Schema.Types.String,
         trim: true,
-        required: [true, 'To pole nie może być puste'],
+        required: [true, 'Uzupełnij to pole.'],
         unique: true,
         validate(value){
             if(!validator.isURL(value)){

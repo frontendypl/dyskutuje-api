@@ -10,7 +10,7 @@ const commentSchema = new mongoose.Schema({
     text: {
         type: mongoose.Schema.Types.String,
         trim: true,
-        required: [true, 'To pole nie może być puste'],
+        required: [true, 'Uzupełnij treść komentarza.'],
         maxLength: [250, 'Maksymalnie 250 znaków'],
     },
     nickName: {
