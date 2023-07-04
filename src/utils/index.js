@@ -35,7 +35,7 @@ const topicProtocol = value => {
 // }
 const clickElement = async (page, url, selector) => {
     await page.goto(url);
-    await new Promise(r => setTimeout(r, url.indexOf('allegro.pl') != -1 ? 5000: 100));
+    await new Promise(r => setTimeout(r, url.indexOf('allegro.pl') !== -1 ? 5000: 100));
     await page.click(selector)
     await new Promise(r => setTimeout(r, 100));
 }
@@ -123,7 +123,7 @@ const createPrintScreen = (topicId, url) => {
 
                 const NewPrintScreen = new PrintScreen({
                     topic: topicId,
-                    src: adultContent? '' : image,
+                    src: adultContent? 'undefined' : image,
                     title: title
                 })
                 await NewPrintScreen.save()
