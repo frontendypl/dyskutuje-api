@@ -70,7 +70,7 @@ const createPrintScreen = (topicId, url) => {
                     await clickElement(page, url, '#cookies_confirm')
                 }
                 if (url.indexOf('allegro.pl') != -1) {
-                    await clickElement(page, url, '[data-role="accept-consent"]')
+                    await loadPageWithCookies(page, url, cookiesArray['allegro'])
                 }
                 if (url.indexOf('tvp.info') != -1) {
                     await clickElement(page, url, '.tvp-cookie-overlay .tvp-covl__ab')
