@@ -124,52 +124,7 @@ const cookiesArray = {
         'domain': '.wp.pl'
     },
     ],
-    allegro: [{
-        'name': '_ga',
-        'value': 'GA1.1.864976396.1688485789',
-        'domain': '.allegro.pl'
-    },
-    {
-        'name': '_ga_G64531DSC4',
-        'value': 'GS1.1.1688485789.1.0.1688485789.60.0.0',
-        'domain': '.allegro.pl'
-    },
-    {
-        'name': '_cmuid',
-        'value': '29fc6bba-82df-45a8-9197-dc7b0e9ac880',
-        'domain': '.allegro.pl'
-    },
-    {
-        'name': 'datadome',
-        'value': '1on1pBoVRFF7QmJykIyFe6OaWzjEIxzm8jJDBB0-3xJddjSfhVF2XFlldD0XP0MbT3Ufy7W6_urhrEtfPnu6YNH_Nha5gsSlELTDhBoSBaRO~_~wrD9tIgHIRJyelWWL',
-        'domain': '.allegro.pl'
-    },
-    {
-        'name': '_gcl_au',
-        'value': '1.1.710420303.1688485775',
-        'domain': '.allegro.pl'
-    },
-    {
-        'name': 'gdpr_permission_given',
-        'value': '1',
-        'domain': '.allegro.pl'
-    },
-    {
-        'name': '__gfp_64b',
-        'value': 'QlS8sv3Daak2J0g8q1644UeLW2fZDchGws0iHb5y46n.x7|1688485791',
-        'domain': '.allegro.pl'
-    },
-    {
-        'name': '_gid',
-        'value': 'GA1.2.795348475.1688485789',
-        'domain': '.allegro.pl'
-    },
-    {
-        'name': 'wdctx',
-        'value': 'v4.B1XOVuVPR5HCAIXw4o6l3Ki6xQ-QwU4IqlZ4oSVCnvWdsq1Ne0F6XOSrXN26MbB_Lt3MsGoJJhyLg_FnXV9y-EwwAZ_Jy7QViRnaUjXjWyg1BJ0SR02aGEtUAwPet4l-DW1ZSCkOlPq3JLHFDFCYqWhUCa84JfxFrorbpb3AzuDWznM6ndoaf93R26QqUSSb8mY-skT8cyPMbpZN1P6YcLqAFw2rMu-TAYXNjs8JhvTpEtvycpQDwoocwkE',
-        'domain': '.allegro.pl'
-    },
-]
+    
 }
 
 module.exports = cookiesArray

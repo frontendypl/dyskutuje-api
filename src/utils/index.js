@@ -35,7 +35,7 @@ const topicProtocol = value => {
 // }
 const clickElement = async (page, url, selector) => {
     await page.goto(url);
-    await new Promise(r => setTimeout(r, 100));
+    await new Promise(r => setTimeout(r, url.indexOf('allegro.pl') != -1 ? 5000: 100));
     await page.click(selector)
     await new Promise(r => setTimeout(r, 100));
 }
@@ -70,7 +70,7 @@ const createPrintScreen = (topicId, url) => {
                     await clickElement(page, url, '#cookies_confirm')
                 }
                 if (url.indexOf('allegro.pl') != -1) {
-                    await loadPageWithCookies(page, url, cookiesArray['allegro'])
+                    await clickElement(page, url, '[data-role="accept-consent"]')
                 }
                 if (url.indexOf('tvp.info') != -1) {
                     await clickElement(page, url, '.tvp-cookie-overlay .tvp-covl__ab')
