@@ -113,9 +113,17 @@ const createPrintScreen = (topicId, url) => {
                 });
                 const title = await page.title()
 
+                let adultContent = false
+                const keyWords = ['porn', 'seks', 'sex', '18+']
+                keyWords.forEach(val=>{
+                    if(title.indexOf(val) !== -1){
+                     adultContent = true   
+                    }
+                })
+
                 const NewPrintScreen = new PrintScreen({
                     topic: topicId,
-                    src: image,
+                    src: adultContent? '' : image,
                     title: title
                 })
                 await NewPrintScreen.save()
