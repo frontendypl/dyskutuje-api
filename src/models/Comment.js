@@ -11,7 +11,7 @@ const commentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.String,
         trim: true,
         required: [true, 'Uzupełnij treść komentarza.'],
-        maxLength: [250, 'Maksymalnie 250 znaków'],
+        maxLength: [1000, 'Maksymalnie 1000 znaków'],
     },
     nickName: {
         type: mongoose.Schema.Types.String,
