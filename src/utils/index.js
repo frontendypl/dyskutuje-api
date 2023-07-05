@@ -87,6 +87,9 @@ const createPrintScreen = (topicId, url) => {
                 if (url.indexOf('gazeta.pl') != -1) {
                     await clickElement(page, url, '#onetrust-accept-btn-handler')
                 }
+                if (url.indexOf('amazon') != -1) {
+                    await clickElement(page, url, '#sp-cc-accept')
+                }
                 else if (url.indexOf('interia.pl') != -1) {
                     await loadPageWithCookies(page, url, cookiesArray['interia'])
                 }
